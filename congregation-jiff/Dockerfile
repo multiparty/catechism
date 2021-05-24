@@ -35,6 +35,7 @@ RUN cd /app && \
 RUN cd /app && \
     git clone https://github.com/multiparty/curia.git && \
     cd /app/curia && \
+    git checkout opt_append && \
     pip install -r requirements.txt && \
     python setup.py develop
 
