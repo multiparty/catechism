@@ -1,5 +1,8 @@
 import base64
 import json
+import os
+
+from curia import *
 
 
 def decode_file(filename):
@@ -15,6 +18,8 @@ def decode_file(filename):
 
 if __name__ == "__main__":
 
+	# pull_protocol()
+
 	# decode and store config of credentials for curia
 	curia_config = decode_file('/config/curia_config')
 	f = open("/data/curia_config.txt", "w")
@@ -25,10 +30,4 @@ if __name__ == "__main__":
 	congregation_config = decode_file('/config/config')
 	f = open("/data/congregation_config.json", "w")
 	f.write(congregation_config)
-	f.close()
-
-	# decode and store congregation protocol
-	protocol = decode_file('/config/protocol')
-	f = open("/data/protocol.py", "w")
-	f.write(protocol)
 	f.close()
